@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 def salary_cal(wage):
     insurance = wage * 0.165
     tax = wage - insurance - 3500
@@ -24,7 +26,6 @@ def salary_cal(wage):
     global salary
     salary = wage - insurance - tax_to_pay
 
-import sys
 
 for arg in sys.argv[1:]:
     try:
