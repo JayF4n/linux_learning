@@ -9,7 +9,7 @@ def salary_cal(wage):
     if tax <= 0:
         tax_to_pay = 0
     elif tax >0 and tax <= 1500:
-        tax_to_pay = tax * 0.0
+        tax_to_pay = tax * 0.03
     elif tax > 1500 and tax <= 4500:
         tax_to_pay = tax * 0.10 -105
     elif tax > 4500 and tax <= 9000:
