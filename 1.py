@@ -56,7 +56,6 @@ class UserData(object):
 
                 infolist =[str(staffNo),str(salary),'%.2f' % insurance,'%.2f' % tax_to_pay,'%.2f' % salaryFinal]
                 self.infolist = infolist
-                print(infolist)
                 self.outputfile = outputfile
                 with open(self.outputfile,'a') as file:
                     file.write(self.infolist[0])
@@ -79,8 +78,16 @@ class UserData(object):
 
 if __name__ == '__main__':
     import sys
-    args = sys.argv[1:]
-    configfile = args[(args.index('-c'))+1]
-    usrdatafile = args[(args.index('-d'))+1]
-    outputfile =  args[(args.index('-o'))+1]
-    UserData(usrdatafile).get_usrdata()
+    try:
+        args = sys.argv[1:]
+        configfile = args[(args.index('-c'))+1]
+        usrdatafile = args[(args.index('-d'))+1]
+        outputfile =  args[(args.index('-o'))+1]
+    except Exception:
+        print("Input Error")
+        exit()
+    try:
+        UserData(usrdatafile).get_usrdata()
+    except Exception:
+        print("File_Path Error or File_Format Error")
+        exit()
