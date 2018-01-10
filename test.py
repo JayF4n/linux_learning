@@ -2,26 +2,34 @@
 
 import sys
 
-def salary_cal(wage):
-    insurance = wage * 0.165
-    tax = wage - insurance - 3500
 
-    if tax <= 0:
-        tax_to_pay = 0
-    elif tax >0 and tax <= 1500:
-        tax_to_pay = tax * 0.0
-    elif tax > 1500 and tax <= 4500:
-        tax_to_pay = tax * 0.10 -105
-    elif tax > 4500 and tax <= 9000:
-        tax_to_pay = tax * 0.20 - 555
-    elif tax > 9000 and tax <= 35000:
-        tax_to_pay = tax * 0.25 -1005
-    elif tax > 35000 and tax <= 55000:
-        tax_to_pay = tax * 0.30 - 2755
-    elif tax > 55000 and tax <= 80000:
-        tax_to_pay = tax * 0.35 - 5505
+args = sys.argv[1:]
+
+userdataargs = args.index('-d')
+userdatafile = args[userdataargs+1]
+
+outputargs = args.index('-o')
+outputfile = args[outputargs+1]
+
+
+class Config(object):
+    def __init__(self,configfile):
+        configfile = args[(args.index('-c'))+1]
+        with (open(configfile).split(' = ')) as configraw:
+            for (a,b) in configraw:
+                self._config = {a,b}
+    
+
+
+
+
+if __name__ == '__main__':
+    if len(sys.argv) == 6:
+        pass
     else:
-        tax_to_pay = tax *0.45 -13505
+        print("Parameter Error")
+        print(sys.argv[0], "-c configfile -d usrfile -o outputfile")
+        sys.exit(-1)
+    sys.exit(0)
 
-    global salary
-    salary = wage - insurance - tax_to_pay
+salary,'%.2f' % insurance,'%.2f' % tax_to_pay,'%.2f'% salaryFinal
