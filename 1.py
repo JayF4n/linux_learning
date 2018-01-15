@@ -70,12 +70,6 @@ class UserData(object):
                     file.write("\n")
         
 
-
-        
-            
-
-                
-
 if __name__ == '__main__':
     import sys
     try:
@@ -83,11 +77,7 @@ if __name__ == '__main__':
         configfile = args[(args.index('-c'))+1]
         usrdatafile = args[(args.index('-d'))+1]
         outputfile =  args[(args.index('-o'))+1]
-    except Exception:
-        print("Input Error")
-        exit()
-    try:
         UserData(usrdatafile).get_usrdata()
-    except Exception:
+    except :
         print("File_Path Error or File_Format Error")
         exit()
