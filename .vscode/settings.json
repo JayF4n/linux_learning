@@ -1,0 +1,11 @@
+{
+    "workbench.colorCustomizations":
+    "tab.activeBackground": "#012A4B",
+    "activityBar.background": "#012A4B",
+    "statusBar.background": "#012A4B",
+    "activityBarBadge.background": "#FFD600",
+    "activityBarBadge.foreground": "#1A1D21",
+    "editorGroup.background": "#1A1D21",
+    "sideBar.background": "#1A1D21"
+ 
+}
