@@ -59,9 +59,6 @@ def get_pid(inode):
 
 
 def main(choose):
-    temp1 = "%-5s %-30s %-30s %-13s %-6s %s"
-    print(temp1 % (
-        "Proto","Local address",'Remote address','Status',"PID","Program name"))
     content = get_content(choose)
     for info in content:
         iterms = info.split(' ')
@@ -87,7 +84,15 @@ def main(choose):
         ))
 
 if __name__ == '__main__':
-    choose = 'tcp'
-    if len(sys.argv) > 1:
-        choose = sys.argv[1]
-    main(choose)
+    temp1 = "%-5s %-30s %-30s %-13s %-6s %s"
+    print(temp1 % ( 
+        "Proto","Local address",'Remote address','Status',"PID","Program name"))
+    argv_list = ('tcp','tcp6','udp','udp6')
+    if len(sys.argv) == 1 or sys.argv[1] == 'all':
+        for arg in argv_list:
+            choose = arg
+            main(choose)
+    else:
+        for arg in sys.argv[1:]:
+            choose = arg
+            main(choose)
