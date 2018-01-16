@@ -61,8 +61,7 @@ def get_pid(inode):
 def main(choose):
     temp1 = "%-5s %-30s %-30s %-13s %-6s %s"
     print(temp1 % (
-        "Proto","Local address",'Remote address','Status',"PID",
-        "Program name"))
+        "Proto","Local address",'Remote address','Status',"PID","Program name"))
     content = get_content(choose)
     for info in content:
         iterms = info.split(' ')
