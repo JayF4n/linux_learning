@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Cap_used=$(df -h / | sed '1d' | awk '{printf("%.2f",$3/$2)}') 
+Cap_used=$(df / | sed '1d' | sed 's/%//g' |  awk '{print($5/100)}')
 
 Mem_used=$(free | sed -n '2p' | awk '{printf("%.2f",$3/$2)}') 
 
