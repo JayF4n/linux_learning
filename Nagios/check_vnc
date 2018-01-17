@@ -1,9 +1,8 @@
 #!/bin/bash
 
-netstat -lp | grep vnc 
-status=$?
+status=$(sudo ps -ef | grep -w vnc | awk 'END{print NR}')
 
-if [[ $status -eq 0 ]] ;then
+if [[ $status -gt 1 ]] ;then
     echo "is OK"
     exit 0;
 else
