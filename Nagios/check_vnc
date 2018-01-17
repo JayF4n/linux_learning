@@ -1,0 +1,12 @@
+#!/bin/bash
+
+netstat -lp | grep vnc 
+status=$?
+
+if [[ $status -eq 0 ]] ;then
+    echo "is OK"
+    exit 0;
+else
+    echo "is Close"
+    exit 2;
+fi
