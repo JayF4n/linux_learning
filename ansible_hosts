@@ -1,0 +1,2 @@
+[product]
+127.0.0.1 ansible_ssh_user=shiyanlou ansible_ssh_private_key_file=/home/shiyanlou/.ssh/id_rsa.pub
